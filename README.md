@@ -3,3 +3,5 @@
 
 - Checagem de segurança quanto a orientação do caminho feito.
 - verificação do endereçamento do código.
+---
+- verificação do endereçamento refeito;
