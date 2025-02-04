@@ -19,21 +19,31 @@ function sortear() {
     let de = parseInt(document.getElementById("de").value);
     let ate = parseInt(document.getElementById("ate").value);  
     let resultado = document.getElementById("resultado");
-    
+
     let sorteados = [];
     let numero;
 
-    for(let i = 0; i < quantidade; i++) {
-        numero = gerarNumero(de, ate);
-        while(sorteados.includes(numero)){
+    if(document.getElementById("quantidade").value == "" && document.getElementById("de").value == "" && document.getElementById("ate").value == "") {
+        alert("Por gentileza, ensira os valores nos campos");
+    } else if(de > ate) {
+        alert("O numero inserido no campo 'Do número' é maior que o número informado no campo 'Até o número'. Por gentileza, reveja os valores");
+    }else if(quantidade > (ate - de)) {
+        alert("Não tem como sortear os números");
+    } else {
+        for(let i = 0; i < quantidade; i++) {
             numero = gerarNumero(de, ate);
+            while(sorteados.includes(numero)){
+                numero = gerarNumero(de, ate);
+            }
+            sorteados.push(numero);
         }
-        sorteados.push(numero);
-    }
 
-    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados} </label>`;
-
-    alteraStatus();
+        document.getElementById("quantidade").value = "";
+        document.getElementById("de").value = "";
+        document.getElementById("ate").value = "";        
+        resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados} </label>`;
+        alteraStatus();
+    }   
 }
 
 function reiniciar() {
@@ -41,6 +51,5 @@ function reiniciar() {
     de = document.getElementById("de").value = "";
     ate = document.getElementById("ate").value = "";
     resultado = document.getElementById("resultado").innerHTML = `<label class="texto__paragrafo">Números sorteados:  nenhum até agora</label>`;
-
     alteraStatus();
 }
