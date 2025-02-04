@@ -68,4 +68,34 @@ impaOuPar();
 ---
 <br>
 
-Crie uma função que converta a temperatura de Celsius para Fahrenheit e vice-versa. Utilize uma variável para indicar a escala desejada e um bloco condicional para determinar qual conversão realizar
+Crie uma função que converta a temperatura de Celsius para Fahrenheit e vice-versa. Utilize uma variável para indicar a escala desejada e um bloco condicional para determinar qual conversão realizar.
+
+```html
+<body>
+    <label for="temperatura">temperatura</label>
+    <input id="temperatura" type="text">
+
+    <select name="escolha" id="select">
+        <option value="Celsius">Celsius</option>
+        <option value="Fahrenheit">Fahrenheit</option>
+    </select>
+
+    <button onclick="converter()">converter</button>
+    <script src="/index.js"></script>
+</body>
+```
+
+```js
+function converter() {
+    let temperatura = parseInt(document.getElementById("temperatura").value);
+    let select = document.getElementById("select").value;
+    
+    if(select == "Celsius") {
+        let celsius = ((temperatura - 32) * 5) / 9;
+        console.log(celsius);
+    } else if (select == "Fahrenheit") {
+        let Fahrenheit = (temperatura * 1.8) + 32;
+        console.log(Fahrenheit);
+    }
+}
+```
