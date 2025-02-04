@@ -8,6 +8,7 @@ function comprar() {
     if(disponivel < 0) {
         alert("Não há mais ingressos disponíveis no momento");
     } else {
+        document.getElementById ("qtd").value = "";
         document.getElementById(`qtd-${ingresso}`).textContent = `${disponivel}`;
     }
 }
