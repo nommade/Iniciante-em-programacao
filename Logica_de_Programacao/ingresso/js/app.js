@@ -5,12 +5,17 @@ function comprar() {
 
     let disponivel = opcao - quantidade;
 
-    if(disponivel < 0) {
+    if(quantidade < 0) {
+        limpaCampo();
+        alert("Valor invalido");
+    } else if(disponivel < 0) {
         alert("Não há mais ingressos disponíveis no momento");
     } else {
-        document.getElementById ("qtd").value = "";
-        document.getElementById(`qtd-${ingresso}`).textContent = `${disponivel}`;
-    }
+        limpaCampo();
+        document.getElementById(`qtd-${ingresso}`).textContent = disponivel;
+    }   
 }
 
-
+function limpaCampo() {
+    document.getElementById ("qtd").value = "";
+}

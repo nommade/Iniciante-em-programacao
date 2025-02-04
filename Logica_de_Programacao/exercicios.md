@@ -1,0 +1,71 @@
+
+---
+Crie uma função que aceite uma string como parâmetro, utilize a função parseInt para converter essa string em um número inteiro e retorne o resultado.
+
+```js
+function numero(value) {
+    let numero = parseInt(value);
+    alert(numero);
+}
+```
+---
+<br>
+Escreva um programa de calculadora simples com funções separadas para adição, subtração, multiplicação e divisão. Utilize um bloco condicional para determinar qual função executar com base em uma variável que representa a operação desejada.
+
+```html
+<body>
+    <input class="number1" type="number">
+    <input class="number2" type="number">
+    <button onclick="somar()">somar</button>
+    <button onclick="subtrair()">subtrair</button>
+    <button onclick="multiplicar()">multiplicar</button>
+    <button onclick="dividir()">dividir</button>
+    <script src="/index.js"></script>
+</body>
+```
+```js
+let numero1 = parseInt(prompt());
+let numero2 = parseInt(prompt());
+
+function somar() {
+    let soma = numero1 + numero2;
+    alert(soma);
+}
+
+function subtrair() {
+    let subtrair = numero1 - numero2;
+    alert(subtrair);
+}
+
+function multiplicar() {
+    let multiplicar = numero1 * numero2;
+    alert(multiplicar);
+}
+
+function dividir() {
+    let dividir = numero1 / numero2;
+    alert(dividir);
+}
+```
+---
+<br>
+
+Implemente uma função que aceite um número como parâmetro e utilize um bloco condicional para determinar se o número é par ou ímpar.
+
+```js
+function impaOuPar() {
+    let numero  = parseInt(prompt());
+    
+    if (numero % 2 === 0) {
+        alert("o numero é par");
+    } else {
+        alert("o numero é impar");
+    }
+}
+
+impaOuPar();
+```
+---
+<br>
+
+Crie uma função que converta a temperatura de Celsius para Fahrenheit e vice-versa. Utilize uma variável para indicar a escala desejada e um bloco condicional para determinar qual conversão realizar
