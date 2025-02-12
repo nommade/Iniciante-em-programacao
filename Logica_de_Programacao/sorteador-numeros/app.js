@@ -27,7 +27,7 @@ function sortear() {
         alert("Por gentileza, ensira os valores nos campos");
     } else if(de > ate) {
         alert("O numero inserido no campo 'Do número' é maior que o número informado no campo 'Até o número'. Por gentileza, reveja os valores");
-    }else if(quantidade > (ate - de)) {
+    } else if(quantidade > (ate - de)) {
         alert("Não tem como sortear os números");
     } else {
         for(let i = 0; i < quantidade; i++) {

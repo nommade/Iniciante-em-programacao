@@ -1,4 +1,8 @@
+Crie um programa que verifica se uma palavra ou frase é um palíndromo.
 
+```js
+
+```
 ---
 Crie uma função que aceite uma string como parâmetro, utilize a função parseInt para converter essa string em um número inteiro e retorne o resultado.
 
@@ -98,4 +102,12 @@ function converter() {
         console.log(Fahrenheit);
     }
 }
+```
+---
+<br>
+
+Crie um programa que verifica se uma palavra ou frase é um palíndromo.
+
+```js
+
 ```
