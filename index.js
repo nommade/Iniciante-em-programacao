@@ -1,19 +1,24 @@
 let palavra = prompt("Essa palavra é um palindromo?");
 let letras = palavra.split('');
 let array = [];
+let newArray = [];
 
 letras.forEach(letra => {
     array.push(letra);
 });
-console.log(array);
+
+for (let i = array.length - 1; i >= 0; i--) {
+    newArray.push(array[i]);
+}
 
 function palindromo() {
-    let newArray = array.reverse();
-
-    if(array == newArray) {
-        alert("essa palavra é um palindromo");
-    } else {
-        alert("essa palavra não é um palindromo");
+    for (var i = 0; i < array.length; i++) {
+        if(array[i] !== newArray[i]) {
+            return "Essa palavra não é um palindromo";
+        }
     }
-    console.log(newArray);
+    return "Essa palavra é um palindromo";
 }
+
+let confirmacao = palindromo();
+alert (confirmacao);
