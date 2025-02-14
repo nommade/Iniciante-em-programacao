@@ -1,9 +1,3 @@
-Crie um programa que verifica se uma palavra ou frase é um palíndromo.
-
-```js
-
-```
----
 Crie uma função que aceite uma string como parâmetro, utilize a função parseInt para converter essa string em um número inteiro e retorne o resultado.
 
 ```js
@@ -102,35 +96,4 @@ function converter() {
         console.log(Fahrenheit);
     }
 }
-```
----
-<br>
-
-Crie um programa que verifica se uma palavra ou frase é um palíndromo.
-
-```js
-let palavra = prompt("Essa palavra é um palindromo?");
-let letras = palavra.split('');
-let array = [];
-let newArray = [];
-
-letras.forEach(letra => {
-    array.push(letra);
-});
-
-for (let i = array.length - 1; i >= 0; i--) {
-    newArray.push(array[i]);
-}
-
-function palindromo() {
-    for (var i = 0; i < array.length; i++) {
-        if(array[i] !== newArray[i]) {
-            return "Essa palavra não é um palindromo";
-        }
-    }
-    return "Essa palavra é um palindromo";
-}
-
-let confirmacao = palindromo();
-alert (confirmacao);
 ```
