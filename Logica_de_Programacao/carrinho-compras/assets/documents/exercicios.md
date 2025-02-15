@@ -57,8 +57,15 @@ console.log(resultado);
 
 4. Receba, no mínimo, duas sentenças como uma string e utilize split() para quebrá-la em frases menores com base em um ponto e vírgula como delimitador.
 
-```js
+```html
+<p>setença1; sentença2</p>
+```
 
+```js
+let text = document.querySelector("p").textContent;
+let sentenca1 = text.split(`;`)[0];
+let sentenca2 = text.split(` `)[1];
+console.log(sentenca1 + " " + sentenca2);
 ```
 ---
 <br>
