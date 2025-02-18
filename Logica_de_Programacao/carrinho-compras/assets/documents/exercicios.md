@@ -69,3 +69,11 @@ console.log(sentenca1 + " " + sentenca2);
 ```
 ---
 <br>
+
+5. Receba uma string contendo números separados por vírgulas. Utilize split() para separar os números e exibi-los no console.
+
+```js
+let ListaDenumeros = "1, 75, 48, 3, 6";
+let numero = ListaDenumeros.split(`,`);
+console.log(numero);
+```
