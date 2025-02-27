@@ -88,6 +88,11 @@ function sortear() {
         let amigo = arrayDeAmigos[i];
         let indiceSorteado = Math.floor(Math.random() * listaSorteada.length);
         let amigoSorteado = listaSorteada.splice(indiceSorteado, 1)[0];
+
+        while (amigo === amigoSorteado) {
+            indiceSorteado = Math.floor(Math.random() * listaSorteada.length);
+            amigoSorteado = listaSorteada[indiceSorteado];
+        }
   
         let resultado = document.createElement("li");
         resultado.textContent = `${amigo} tirou ${amigoSorteado}`;
@@ -137,6 +142,11 @@ for (let i = 0; i < arrayDeAmigos.length; i++) {
     let indiceSorteado = Math.floor(Math.random() * listaSorteada.length);
     let amigoSorteado = listaSorteada.splice(indiceSorteado, 1)[0]; // Remove o amigo sorteado da lista
 
+    while (amigo === amigoSorteado) {
+            indiceSorteado = Math.floor(Math.random() * listaSorteada.length);
+            amigoSorteado = listaSorteada[indiceSorteado];
+    }
+
     let resultado = document.createElement("li");
     resultado.textContent = `${amigo} tirou ${amigoSorteado}`;
     listaSorteio.appendChild(resultado);
@@ -146,6 +156,17 @@ for (let i = 0; i < arrayDeAmigos.length; i++) {
 - ``let amigo = arrayDeAmigos[i];``: Essa linha pega o nome do amigo atual na lista original;
 - ``let indiceSorteado = Math.floor(Math.random() * listaSorteada.length);``: Essa linha gera um índice aleatório dentro da lista de amigos sorteados. Esse índice será usado para escolher o amigo que o amigo atual irá tirar;
 - ``let amigoSorteado = listaSorteada.splice(indiceSorteado, 1)[0];``: Essa linha pega o amigo sorteado da lista de amigos sorteados e remove essa lista. Isso garante que o mesmo amigo não seja sorteado duas vezes;
+
+<br>
+
+- ``while (amigo === amigoSorteado)``: Essa linha inicia um loop whileque continua sendo executado enquanto a condição dentro dos parênteses for verdadeira;
+    - ``amigo === amigoSorteado``: Verifica se os valores das variáveis ``amigo`` e ``amigoSorteado`` ​​são exatamente iguais;
+    - O operador ( ``===`` ) verifica tanto o valor quanto o tipo das variáveis, garantindo que a comparação seja precisa;
+- ``let indiceSorteado = Math.floor(Math.random() * listaSorteada.length);``: Essa linha gera um índice aleatório dentro da lista de amigos sorteados. Esse índice será usado para escolher o amigo que o amigo atual irá tirar;
+- ``amigoSorteado = listaSorteada[indiceSorteado];``: Essa linha atualiza o valor da variável amigoSorteadocom o amigo que está na posição indiceSorteadodo array listaSorteada.
+
+<br>
+
 - ``let resultado = document.createElement("li");``: Essa linha cria um novo elemento HTML do tipo "li" (item da lista);
 - ``resultado.textContent =${amigo} tirou ${amigoSorteado};``: Essa linha define o texto do item da lista com o nome do amigo que está sorteando e o nome do amigo que ele tirou;
 - ``listaSorteio.appendChild(resultado);``: Essa linha adiciona o item da lista ao elemento HTML que exibe o resultado do sorteio.

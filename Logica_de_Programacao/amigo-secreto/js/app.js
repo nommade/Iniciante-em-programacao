@@ -32,6 +32,11 @@ function sortear() {
         let amigo = arrayDeAmigos[i];
         let indiceSorteado = Math.floor(Math.random() * listaSorteada.length);
         let amigoSorteado = listaSorteada.splice(indiceSorteado, 1)[0];
+
+        while (amigo === amigoSorteado) {
+            indiceSorteado = Math.floor(Math.random() * listaSorteada.length);
+            amigoSorteado = listaSorteada[indiceSorteado];
+        }
   
         let resultado = document.createElement("li");
         resultado.textContent = `${amigo} tirou ${amigoSorteado}`;
@@ -44,4 +49,8 @@ function embaralhar(array) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
+}
+
+function reiniciar() {
+    
 }
