@@ -90,6 +90,11 @@ function sortear() {
         let amigoSorteado = listaSorteada.splice(indiceSorteado, 1)[0];
 
         while (amigo === amigoSorteado) {
+            // Lógica para lidar com a lista vazia (por exemplo, exibir um erro)
+            if (listaSorteada.length === 0) {
+                console.error("Erro: listaSorteada está vazia!");
+                break; // Interrompe o loop
+            }
             indiceSorteado = Math.floor(Math.random() * listaSorteada.length);
             amigoSorteado = listaSorteada[indiceSorteado];
         }
@@ -143,8 +148,13 @@ for (let i = 0; i < arrayDeAmigos.length; i++) {
     let amigoSorteado = listaSorteada.splice(indiceSorteado, 1)[0]; // Remove o amigo sorteado da lista
 
     while (amigo === amigoSorteado) {
-            indiceSorteado = Math.floor(Math.random() * listaSorteada.length);
-            amigoSorteado = listaSorteada[indiceSorteado];
+        // Lógica para lidar com a lista vazia (por exemplo, exibir um erro)
+        if (listaSorteada.length === 0) {
+            console.error("Erro: listaSorteada está vazia!");
+            break; // Interrompe o loop
+        }
+        indiceSorteado = Math.floor(Math.random() * listaSorteada.length);
+        amigoSorteado = listaSorteada[indiceSorteado];
     }
 
     let resultado = document.createElement("li");
@@ -162,6 +172,9 @@ for (let i = 0; i < arrayDeAmigos.length; i++) {
 - ``while (amigo === amigoSorteado)``: Essa linha inicia um loop whileque continua sendo executado enquanto a condição dentro dos parênteses for verdadeira;
     - ``amigo === amigoSorteado``: Verifica se os valores das variáveis ``amigo`` e ``amigoSorteado`` ​​são exatamente iguais;
     - O operador ( ``===`` ) verifica tanto o valor quanto o tipo das variáveis, garantindo que a comparação seja precisa;
+- ``if (listaSorteada.length === 0)``: Essa linha verifica se a lista listaSorteadaestá vazia;
+- ``console.error("Erro: listaSorteada está vazia!");``: Essa linha exibe uma mensagem de erro no console do navegador, informando que a lista está vazia;
+- ``break;``: Essa linha interrompeu a execução do loop while, evitando que o código tente acessar elementos de uma lista vazia;
 - ``let indiceSorteado = Math.floor(Math.random() * listaSorteada.length);``: Essa linha gera um índice aleatório dentro da lista de amigos sorteados. Esse índice será usado para escolher o amigo que o amigo atual irá tirar;
 - ``amigoSorteado = listaSorteada[indiceSorteado];``: Essa linha atualiza o valor da variável amigoSorteadocom o amigo que está na posição indiceSorteadodo array listaSorteada.
 

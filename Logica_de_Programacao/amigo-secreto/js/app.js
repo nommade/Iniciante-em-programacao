@@ -34,6 +34,10 @@ function sortear() {
         let amigoSorteado = listaSorteada.splice(indiceSorteado, 1)[0];
 
         while (amigo === amigoSorteado) {
+            if (listaSorteada.length === 0) {
+                console.error("Erro: listaSorteada está vazia!");
+                break;
+            }
             indiceSorteado = Math.floor(Math.random() * listaSorteada.length);
             amigoSorteado = listaSorteada[indiceSorteado];
         }
