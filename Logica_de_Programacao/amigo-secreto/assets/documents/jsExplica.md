@@ -1,9 +1,10 @@
 ```js
+let listaSorteio = document.getElementById("lista-sorteio");
+let amigosParticipantes = document.getElementById("lista-amigos");
 let arrayDeAmigos = [];
 
 function adicionar() {
     let amigo = document.getElementById("nome-amigo").value;
-    let amigosParticipantes = document.getElementById("lista-amigos");
 
     if (amigo == "") {
         alert("O campo não pode estar vazio");
@@ -18,6 +19,12 @@ function adicionar() {
 ```
 
 A função adicionar()tem como objetivo principal permitir que você adicione nomes de amigos à lista de participantes do amigo secreto.
+
+### **Limpeza da lista de prêmios:**
+```js
+let listaSorteio = document.getElementById("lista-sorteio");
+```
+Essa parte do código pega o elemento HTML que você definiu para exibir o resultado do sorteio (provavelmente uma lista não ordenada).
 
 ### **Obtenção do nome do amigo:**
 ```js
@@ -72,7 +79,6 @@ else {
 
 ```js
 function sortear() {
-    let listaSorteio = document.getElementById("lista-sorteio");
     listaSorteio.innerHTML = ""; 
   
     if (arrayDeAmigos.length === 0) {
@@ -106,13 +112,6 @@ function sortear() {
 }
 ```
 A função sortear() tem como objetivo principal pegar a lista de amigos que você cadastrou, embaralhar essa lista de forma recuperada e, em seguida, exibir na tela quem tirou quem no sorteio.
-
-### **Limpeza da lista de prêmios:**
-```js
-let listaSorteio = document.getElementById("lista-sorteio");
-listaSorteio.innerHTML = ""; // Limpa a lista de sorteio
-```
-Essa parte do código pega o elemento HTML que você definiu para exibir o resultado do sorteio (provavelmente uma lista não ordenada) e limpe o conteúdo anterior, caso haja algum.
 
 ### **Verificação da lista de amigos:**
 ```js
@@ -229,3 +228,14 @@ A função embaralhar(array), percorre o array de trás para frente e, para cada
 
 ---
 <br><br>
+
+```js
+function reiniciar() {
+    listaSorteio.innerHTML = "";
+    amigosParticipantes.innerHTML = "";
+}
+```
+Essa função pega todos os valores inseridos no código e apaga tudo.
+
+- ``amigosParticipantes.innerHTML = "";``: limpe o conteúdo anterior, caso haja algum.
+- ``listaSorteio.innerHTML = "";``: limpe o conteúdo anterior, caso haja algum.

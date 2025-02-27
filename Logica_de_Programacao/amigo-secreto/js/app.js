@@ -1,8 +1,9 @@
+let listaSorteio = document.getElementById("lista-sorteio");
+let amigosParticipantes = document.getElementById("lista-amigos");
 let arrayDeAmigos = [];
 
 function adicionar() {
     let amigo = document.getElementById("nome-amigo").value;
-    let amigosParticipantes = document.getElementById("lista-amigos");
 
     if (amigo == "") {
         alert("O campo não pode estar vazio");
@@ -16,9 +17,6 @@ function adicionar() {
 }
 
 function sortear() {
-    let listaSorteio = document.getElementById("lista-sorteio");
-    listaSorteio.innerHTML = ""; 
-  
     if (arrayDeAmigos.length === 0) {
         alert("Nenhum amigo foi adicionado para o sorteio.");
         return;
@@ -56,5 +54,6 @@ function embaralhar(array) {
 }
 
 function reiniciar() {
-    
+    listaSorteio.innerHTML = "";
+    amigosParticipantes.innerHTML = "";
 }
